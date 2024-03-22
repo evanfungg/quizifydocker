@@ -1,0 +1,118 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 200px; 
+}
+
+.quiz-container {
+  background: linear-gradient(to bottom, #587171, #0f4f5b);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 800px;
+  overflow-y: auto;
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  
+ 
+  max-width: 800px;
+  min-width: 300px; 
+  width: 90%;
+  
+  max-height: 600px; 
+  overflow-y: auto; 
+}
+
+
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.quiz-title {
+  font-size: 24px;
+  color: #dde3e0;
+  font-weight: bold;
+  text-align: center;
+  flex-grow: 1;
+}
+
+
+
+.questions-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 20px; 
+  width: 100%;
+}
+
+.question-answer-block {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  color: #dde9e9;
+  margin: 5px;
+  max-height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+
+}
+
+.icon-button {
+    cursor: pointer;
+    width: 24px; 
+    height: 20px; 
+    margin-left: 10px; 
+  }
+
+.create {
+    margin-top: 30px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 14px;
+    background-image: linear-gradient(to right, #fd4c7a, #ff7e5f);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+  }
+
+.logout {
+    padding: 2px 8px;
+    margin-left: 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    background-image: linear-gradient(to right, #fd4c7a, #ff7e5f);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+  }
+  
+.button:hover {
+    background-color: #bf8860;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+
+
+.questions-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    width: 100%; 
+  }
+  
+.answers {
+    font-weight: bold;
+  }
+
+
