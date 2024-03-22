@@ -40,7 +40,7 @@ export default function PhotoUpload() {
             formData.append('file', uploadedFile);
 
             try {
-                const ocrResponse = await fetch('https://quizify-556c7d98410b.herokuapp.com/flask/image-ocr', {
+                const ocrResponse = await fetch(process.env.IMAGE_OCR, {
                     method: 'POST',
                     body: formData,
                 });
@@ -49,7 +49,7 @@ export default function PhotoUpload() {
                     const ocrData = await ocrResponse.json();
                     setExtractedText(ocrData.text);
 
-                    const qaResponse = await fetch('https://quizify-556c7d98410b.herokuapp.com/flask/generate-qa', {
+                    const qaResponse = await fetch(process.env.GENERATE_QA, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ text: ocrData.text }),
@@ -63,7 +63,7 @@ export default function PhotoUpload() {
                         
                        
                         try {
-                            const res = await fetch("http://localhost:3000/api/quiz", {
+                            const res = await fetch(process.env.CREATE_QUIZ_STORE, {
                             method: "POST",
                             headers: {
                                 "Content-type": "application/json",
