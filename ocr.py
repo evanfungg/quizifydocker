@@ -144,7 +144,7 @@ def generate_qa():
     questions_prompt = f"""Given the text: "{text}", efficiently generate a list of 7 unique questions based on the text in one single operation. 
     Format the output as a JSON object with keys as "q1", "q2", ..., "q10", and their corresponding questions as values. 
     For instance, if the text were about penguins, the expected output format would be: 
-    {{"q1": "What is the average weight of an Emperor Penguin?", "q2": "Where do penguins live?", ..., "q10": "How do penguins communicate?"}}.
+    {{"q1": "What is the average weight of an Emperor Penguin?", "q2": "Where do penguins live?", ..., "q7": "How do penguins communicate?"}}.
     Please adhere to this structured format strictly and use double quotes for both keys and values and only include the JSON object."""
 
     questions_response = co.generate(
@@ -159,7 +159,7 @@ def generate_qa():
     questions_dict = json.loads(questions_response.generations[0].text)
     
     answers_prompt = f"""Given the text: "{text}" and the questions: "{questions_dict}", efficiently generate a list of 10 answers based on the text and the questions in one single operation. 
-    Format the output as a JSON object with keys as "a1", "a2", ..., "a10", and their corresponding answers as values. a1 should be the answer for q1 and a2 should be the answer for q2.
+    Format the output as a JSON object with keys as "a1", "a2", ..., "a7", and their corresponding answers as values. a1 should be the answer for q1 and a2 should be the answer for q2.
     For instance, if the text were about penguins, the expected output format would be: 
     {{"a1": "The average weight of an Emperor Penguin is 57 pounds", "a2": Penguins live in the north pole", ..., "a10": "Penguins communicate by flapping"}}.
     Please adhere to this structured format strictly and use double quotes for both keys and values and only include the JSON object."""
