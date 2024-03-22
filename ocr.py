@@ -141,7 +141,7 @@ def generate_qa():
     if not text:
         return jsonify({'error': 'No text provided'}), 400
 
-    questions_prompt = f"""Given the text: "{text}", efficiently generate a list of 10 unique questions based on the text in one single operation. 
+    questions_prompt = f"""Given the text: "{text}", efficiently generate a list of 7 unique questions based on the text in one single operation. 
     Format the output as a JSON object with keys as "q1", "q2", ..., "q10", and their corresponding questions as values. 
     For instance, if the text were about penguins, the expected output format would be: 
     {{"q1": "What is the average weight of an Emperor Penguin?", "q2": "Where do penguins live?", ..., "q10": "How do penguins communicate?"}}.
