@@ -6,16 +6,18 @@ from flask_cors import CORS
 import requests
 import os
 
-app = Flask(__name__)
-CORS(app)
-app.debug = True
 
+app = Flask(__name__)
+CORS(app, resources={r"/flask/*": {"origins": ["http://localhost:3000", "https://your-production-domain.com"]}})
+
+
+HF_API_TOKEN = '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'
 HF_API_URL = "https://api-inference.huggingface.co/models"
-HF_API_HEADERS = {"Authorization": f"Bearer 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"}
+HF_API_HEADERS = {"Authorization": f"Bearer {HF_API_TOKEN}"}
 
 @app.route('/')
 def home():
-    return "Welcome to the Quizify Api"
+    return "Wecome to the Quizify Api"
 
 def query_huggingface_model(model_name, payload):
     response = requests.post(f"{HF_API_URL}/{model_name}", headers=HF_API_HEADERS, json=payload)
@@ -95,7 +97,7 @@ def generate_qa():
     for question in questions:
         answer = answer_question(question, text)
         
-        # Check if the answer is unique and not None
+        
         if answer and answer not in unique_answers:
             unique_answers.add(answer)
             qa_pairs.append({'question': question, 'answer': answer})
@@ -107,5 +109,3 @@ def generate_qa():
 
 if __name__ == '__main__':
     app.run(port=5328)
-
-
