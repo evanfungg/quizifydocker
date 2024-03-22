@@ -17,7 +17,7 @@ HF_API_HEADERS = {"Authorization": f"Bearer {HF_API_TOKEN}"}
 
 @app.route('/')
 def home():
-    return "Wecome to the Quizify Api"
+    return "Wecome to the Quizify Thunderdome"
 
 def query_huggingface_model(model_name, payload):
     response = requests.post(f"{HF_API_URL}/{model_name}", headers=HF_API_HEADERS, json=payload)
