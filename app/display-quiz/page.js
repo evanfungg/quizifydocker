@@ -14,7 +14,8 @@ export default function DisplayQuiz() {
         const fetchQuizzes = async () => {
             if (user) {
                 try {
-                    const response = await fetch('/api/quiz'); 
+                    const response = await fetch(process.env.NEXT_PUBLIC_DISPLAY_FETCH_QUIZ); 
+                    // /api/quiz
                     if (!response.ok) throw new Error("Failed to fetch quizzes");
                     const data = await response.json();
                     setQuiz(data.quiz); 
@@ -34,8 +35,8 @@ export default function DisplayQuiz() {
 
     const deleteQuestion = async (questionId) => {
         try {
-            const response = await fetch(`http://localhost:3000/api/quiz?questionId=${questionId}`, {
-                
+            const response = await fetch(`${process.env.NEXT_PUBLIC_DISPLAY_FETCH_QUIZ}?questionId=${questionId}`, {
+                /// `http://localhost:3000/api/quiz?questionId=${questionId}`
                 method: 'DELETE',
                 headers: { 'Content-Type': 'application/json' },
             });

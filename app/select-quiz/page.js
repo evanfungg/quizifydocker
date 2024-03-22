@@ -11,7 +11,8 @@ export default function SelectQuiz() {
     useEffect(() => {
         const fetchNames = async () => {
             try {
-                const response = await fetch('/api/names');
+                const response = await fetch(process.env.NEXT_PUBLIC_FETCH_NAMES);
+                // /api/names
                 if (!response.ok) throw new Error("Failed to fetch Names");
                 const data = await response.json();
                 setQuizzes(data.quizzes);

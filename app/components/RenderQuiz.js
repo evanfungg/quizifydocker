@@ -16,7 +16,9 @@ export default function RenderQuiz({quiz_id}) {
             if (user && quiz_id) {
                 try {
                     
-                    const response = await fetch(`http://localhost:3000/api/render?quiz_id=${quiz_id}`);
+                    const response = await fetch(`${process.env.NEXT_PUBLIC_RENDER_QUIZ}?quiz_id=${quiz_id}`);
+                    // `http://localhost:3000/api/render?quiz_id=${quiz_id}`
+                    //`${process.env.NEXT_PUBLIC_DISPLAY_FETCH_QUIZ}?questionId=${questionId}`
                     if (!response.ok) throw new Error("Failed to fetch quiz");
                     const data = await response.json();
                     setQuiz(data.quiz);
@@ -44,8 +46,8 @@ export default function RenderQuiz({quiz_id}) {
 
     const deleteQuestion = async (questionId) => {
         try {
-            const response = await fetch(`http://localhost:3000/api/render?questionId=${questionId}`, {
-                
+            const response = await fetch(`${process.env.NEXT_PUBLIC_RENDER_QUIZ}?questionId=${questionId}`, {
+                // `http://localhost:3000/api/render?questionId=${questionId}`
                 method: 'DELETE',
                 headers: { 'Content-Type': 'application/json' },
             });

@@ -8,7 +8,7 @@ import os
 
 
 app = Flask(__name__)
-CORS(app, resources={r"/flask/*": {"origins": ["http://localhost:3000", "https://your-production-domain.com"]}})
+CORS(app, resources={r"/flask/*": {"origins": ["http://localhost:3000", "https://quizify-roan.vercel.app"]}})
 
 
 HF_API_TOKEN = os.environ.get('HUGGINGFACE_API_TOKEN')
