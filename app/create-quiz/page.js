@@ -125,11 +125,14 @@ export default function PhotoUpload() {
                     {isLoading ? (
                         <div className="loading-message">Generating quiz...</div>
                     ) : (
+                        <>
                         <form className="form-container" onSubmit={handleSubmit}>
                             <input className="file-btn" type="file" name="uploadedFile" accept="image/*" />
                             <input className="quiz-name" type="text" placeholder="Enter Quiz Name" onChange={(e) => setQuizName(e.target.value)} value={quizName}/>
                             <button className="submit" type="submit">Create Quiz</button>
                         </form>
+                        <div className="disclaimer">For best results, please use a screenshotted image of text of substantial size.</div>
+                        </>
                     )}
                 </div>
             </div>

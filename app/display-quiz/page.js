@@ -54,7 +54,7 @@ export default function DisplayQuiz() {
     };
 
     return (
-        <div className="main">
+        <div className="main-display">
     {quiz ? (
         <div className="quiz-container">
             <div className="quiz-title-container">

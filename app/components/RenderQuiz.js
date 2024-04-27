@@ -65,29 +65,29 @@ export default function RenderQuiz({quiz_id}) {
     };
 
     return (
-        <div className="main">
+        <div className="main-render">
     {quiz ? (
-        <div className="quiz-container">
-            <div className="quiz-header">
-                        <div className="quiz-title">{`${quiz.quizName} Quiz`}</div>
+        <div className="quiz-container-render">
+            <div className="quiz-header-render">
+                        <div className="quiz-title-render">{`${quiz.quizName} Quiz`}</div>
                         
                             
-                            <button className="logout"><a href="/api/auth/logout">Logout</a></button>
+                            <button className="logout-render"><a href="/api/auth/logout">Logout</a></button>
                         
                     </div>
-            <div className="questions-wrapper"> 
+            <div className="questions-wrapper-render"> 
                 {quiz.questionsAndAnswers.map((qna) => (
-                    <div key={qna.questionId} className="question-answer-block">
-                        <div className="question-flex-container">
+                    <div key={qna.questionId} className="question-answer-block-render">
+                        <div className="question-flex-container-render">
                             <span>{qna.questionText}</span>
-                            <img src="/angle-down.png" alt="Toggle Answer" className="icon-button" onClick={() => toggleAnswerVisibility(qna.questionId)} />
-                            <img src="/trash.png" alt="Delete" className="icon-button" onClick={() => deleteQuestion(qna.questionId)} />
+                            <img src="/angle-down.png" alt="Toggle Answer" className="icon-button-render" onClick={() => toggleAnswerVisibility(qna.questionId)} />
+                            <img src="/trash.png" alt="Delete" className="icon-button-render" onClick={() => deleteQuestion(qna.questionId)} />
                         </div>
-                        {visibleAnswers.has(qna.questionId) && <div className = 'answers'>{qna.answerText}</div>}
+                        {visibleAnswers.has(qna.questionId) && <div className = 'answers-render'>{qna.answerText}</div>}
                     </div>
                 ))}
             </div>
-            <Link href="./create-quiz"><button className="create">Create New Quiz</button></Link> 
+            <Link href="./create-quiz"><button className="create-render">Create New Quiz</button></Link> 
         </div>
     ) : <p>Loading quizzes...</p>}
 </div>

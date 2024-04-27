@@ -31,8 +31,8 @@ export default function SelectQuiz() {
     };
 
     return (
-        <div className="main">
-        <div className="content">
+        <div className="main-select">
+        <div className="content-select">
             {selectedQuizId && (
                 <RenderQuiz key={selectedQuizId} quiz_id={selectedQuizId} />
             )}

@@ -1,11 +1,11 @@
-.main {
+.main-render {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 200px; 
+ 
 }
 
-.quiz-container {
+.quiz-container-render {
   background: linear-gradient(to bottom, #587171, #0f4f5b);
   border-radius: 20px;
   padding: 40px;
@@ -28,14 +28,14 @@
 }
 
 
-.quiz-header {
+.quiz-header-render {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
 }
 
-.quiz-title {
+.quiz-title-render {
   font-size: 24px;
   color: #dde3e0;
   font-weight: bold;
@@ -45,14 +45,14 @@
 
 
 
-.questions-container {
+.questions-container-render {
   display: grid;
   grid-template-columns: repeat(2, 1fr); 
   gap: 20px; 
   width: 100%;
 }
 
-.question-answer-block {
+.question-answer-block-render {
   background-color: rgba(255, 255, 255, 0.1);
   padding: 10px;
   border-radius: 10px;
@@ -65,14 +65,14 @@
 
 }
 
-.icon-button {
+.icon-button-render {
     cursor: pointer;
     width: 24px; 
     height: 20px; 
     margin-left: 10px; 
   }
 
-.create {
+.create-render {
     margin-top: 30px;
     padding: 2px 8px;
     border-radius: 20px;
@@ -85,7 +85,7 @@
     font-weight: bold;
   }
 
-.logout {
+.logout-render {
     padding: 2px 8px;
     margin-left: 20px;
     border-radius: 20px;
@@ -104,14 +104,14 @@
   }
 
 
-.questions-wrapper {
+.questions-wrapper-render {
     display: flex;
     flex-direction: column;
     align-items: flex-start; 
     width: 100%; 
   }
   
-.answers {
+.answers-render {
     font-weight: bold;
   }
 

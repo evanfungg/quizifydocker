@@ -121,7 +121,7 @@ import json
 import requests
 import os
 app = Flask(__name__)
-CORS(app, resources={r"/flask/*": {"origins": ["http://localhost:3000", "https://quizify-roan.vercel.app"]}})
+CORS(app, resources={r"/flask/*": {"origins": ["http://localhost:3002", "http://localhost:3000", "https://quizify-roan.vercel.app"]}})
 app.debug = True 
 co = cohere.Client("0jmZd2S62ns7sgm6cVCZIER9kDsH3TipMwCWpa2Q")
 
